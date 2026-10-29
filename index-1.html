@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>하이큐 드림 홈페이지</title>
+  <meta name="description" content="하이큐!! 드림 커플을 소개하는 개인 팬 홈페이지">
+  <!-- 파비콘 요청 오류가 나지 않도록 그림 데이터를 직접 넣었어요 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%232f6fed'/%3E%3Cpath d='M8 30c14 2 26-4 34-18M20 58c2-14 12-24 36-26M32 4c-6 16-4 38 6 56' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">본문으로 건너뛰기</a>
+
+  <!-- 맨 위 메뉴줄: 사이트명 / 홈 / 달력 / 설정 -->
+  <header class="topbar">
+    <a class="brand" href="#/home" aria-label="홈으로 가기">
+      <span class="brand-mark" aria-hidden="true">🏐</span>
+      <span id="brand-name">하이큐 드림</span>
+    </a>
+    <nav class="topnav" aria-label="바로가기">
+      <a class="btn small" href="#/home">홈</a>
+      <button type="button" class="btn small" id="btn-calendar" data-action="goto-calendar">달력</button>
+      <button type="button" class="btn small icon" id="btn-settings" data-action="open-settings" aria-label="설정 열기">⚙</button>
+    </nav>
+  </header>
+
+  <!-- 화면이 바뀌는 영역: script.js가 여기에 내용을 그려요 -->
+  <main id="view" tabindex="-1"></main>
+
+  <footer class="footer">
+    <p>팬이 만든 비공식 개인 홈페이지예요. 이 브라우저에 저장된 내용은 설정 ⚙ → 데이터에서 백업할 수 있어요.</p>
+  </footer>
+
+  <div id="modal-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <audio id="audio" preload="none"></audio>
+
+  <noscript><p style="padding:16px">이 홈페이지는 JavaScript가 켜져 있어야 작동해요.</p></noscript>
+  <script src="script.js"></script>
+</body>
+</html>
